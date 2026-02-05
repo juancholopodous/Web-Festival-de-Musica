@@ -1,3 +1,17 @@
 body {
-  background-color: rgb(0, 255, 13);
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  font-family: "Montserrat", sans-serif;
 }
