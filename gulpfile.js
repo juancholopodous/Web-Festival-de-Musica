@@ -13,5 +13,5 @@ export function css(done) {
 }
 
 export function dev() { // no le pasamos done como parametro
-    watch('src/scss/app.scss', css)
+    watch('src/scss/**/*.scss', css) //busqueda por patrón, primero cualquier directorio dentro de src/scss/ luego cualquier archivo con extención .scss
 }

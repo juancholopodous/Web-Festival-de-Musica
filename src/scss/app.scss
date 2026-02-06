@@ -1,4 +1,4 @@
-@use 'variables' as v;
+@use 'base/variables' as v;
 
 body { // Habilitación de fuentes variables con Google Fonts
     font-family: v.$fuente_principal; //variable para feunte
