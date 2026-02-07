@@ -1,7 +1,7 @@
 @use 'variables' as v;
 
 html {
-    font-size: 62.5%;
+    font-size: 62.5%; /* 1 rem = 10px */    
     box-sizing: border-box;
     scroll-padding-top: 0rem;
 }
@@ -31,7 +31,7 @@ p {
     margin: 0 auto;
 }
 
-a { text-decoration: none; }
+a { text-decoration: none; } /*Enlaces sin decoración*/
 h1, h2, h3 {
     margin: 0 0 5rem 0;
     font-weight: 900;
@@ -50,6 +50,6 @@ img {
     display: block;
 }
 
-body > section {
+body > section { // Establece que el primer section hijo de un body tendrá un padding de 100px arriba y 0px abajo.
     padding: 10rem 0
 }
