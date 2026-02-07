@@ -5,7 +5,7 @@ import gulpSass from 'gulp-sass'
 const sass = gulpSass(dartSass)
 
 export function css(done) {
-    src('src/scss/app.scss') // ruta completa del arvhivo
+    src('src/scss/**/*.scss') // ruta completa del arvhivo
         .pipe( sass() .on('error', sass.logError) ) 
         .pipe( dest('build/css') )
         
