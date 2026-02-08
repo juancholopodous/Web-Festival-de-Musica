@@ -1,0 +1,22 @@
+@use 'variables' as v; // en la ruta no colocamos base/ porque están en la misma carpeta.
+
+@mixin telefono { //mq para 480px y más arriba
+    @media (min-width: v.$telefono) {
+        @content;
+    }
+}
+@mixin tablet { //mq para 480px y más arriba
+    @media (min-width: v.$tablet) {
+        @content;
+    }
+}
+@mixin desktop { //mq para 480px y más arriba
+    @media (min-width: v.$desktop) {
+        @content;
+    }
+}
+@mixin desktopXL { //mq para 480px y más arriba
+    @media (min-width: v.$desktopXL) {
+        @content;
+    }
+}
