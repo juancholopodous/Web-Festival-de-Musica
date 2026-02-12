@@ -1,4 +1,5 @@
 @use 'variables' as v;
+@use 'sass:color';
 
 html {
     font-size: 62.5%; /* 1 rem = 10px */    
@@ -52,4 +53,14 @@ img {
 
 body > section { // Establece que el primer section hijo de un body tendrá un padding de 100px arriba y 0px abajo.
     padding: 10rem 0
+}
+
+.footer {
+    background-color: color.adjust(v.$rosa, $lightness: .9%); //necesario agregar "@use 'sass:color';" arriba.
+    p {
+        margin: 0 auto;
+        padding: 2rem;
+        text-align: center;
+        color: v.$blanco;
+    }
 }
