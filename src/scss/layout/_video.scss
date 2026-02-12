@@ -29,7 +29,7 @@
 }
 
 .contenedor-video {
-    z-index: 1; //Permite seleccionar los siguientes elementos. Controlando la profundidad de un elemento.
+    z-index: 10; //Permite seleccionar los siguientes elementos. Controlando la profundidad de un elemento.
 
     h2 { //personalización de "Techno & EDM Festival"
         color: v.$blanco;
@@ -44,5 +44,6 @@
         font-size: 2.4rem;
         font-weight: 700;
         margin: 0; // Quitamos los margenes por defaul que tienen
+        margin-top: 1.5rem;
     }
 }
