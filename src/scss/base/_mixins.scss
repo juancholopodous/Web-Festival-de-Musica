@@ -32,3 +32,9 @@
     grid-template-columns: repeat($columnas, 1fr);
     gap: $separacion;
 }
+
+@mixin resetear-lista { // Eliminar los estilos por defecto de las listas etiqueta ul
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}

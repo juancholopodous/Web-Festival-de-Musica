@@ -5,7 +5,7 @@
     @include m.contenedor;
 
     @include m.tablet {
-        @include m.grid(2);
+        @include m.grid(2); // 2 es el núemro de columnas y como no hay 2° parametro toma el que fijamos por default "5rem", pero podría ser otro.
     }
 }
 
