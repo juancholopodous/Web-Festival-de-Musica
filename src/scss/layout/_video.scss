@@ -12,9 +12,9 @@
         background: linear-gradient(
             270deg,
             rgba(v.$morado, 60%),
-            rgba(color.adjust(v.$morado,$lightness:-20%), 90%)
+            rgba(color.adjust(v.$morado,$lightness:-25%), 90%)
         );
-        inset: 0;
+        inset: 0; // Equivale a tomar las coordenadas de top,bottom,left y right como 0.
         display: flex; // habilitamos flex para usar aling-items en el texto del overlay
         align-items: center;
     };
@@ -29,7 +29,7 @@
 }
 
 .contenedor-video {
-    z-index: 10; //Permite seleccionar los siguientes elementos. Controlando la profundidad de un elemento.
+    z-index: 1; //Permite seleccionar los siguientes elementos. Controlando la profundidad de un elemento.
 
     h2 { //personalización de "Techno & EDM Festival"
         color: v.$blanco;
