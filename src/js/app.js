@@ -44,5 +44,5 @@ function cerrarModal () {
     //Retrasamos el cierre para que funcione la transición.
     setTimeout(() => {
         modal?.remove() // la lógica es: Si existe modal? Entonces elimínalo
-    }, 500); //cada 1000 es un segundo.
+    }, 240); //cada 1000 es un segundo.
 }

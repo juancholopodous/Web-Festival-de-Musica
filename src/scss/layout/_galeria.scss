@@ -30,10 +30,10 @@
     background-color: rgba(v.$negro, $alpha: 0.5);
     display: grid; //Grid para poder centrar el contenido de img
     place-items: center; // Centra horizontal y verticalmente
-    animation: fadeIn ease-in 0.5s;
+    animation: fadeIn ease-in 0.25s;
 
     &.fade-out {
-        animation: fadeOut ease-in 0.5s;
+        animation: fadeOut ease-in 0.25s;
     }
 
     img {
@@ -49,5 +49,6 @@
 
 @keyframes fadeOut {
     0% { opacity: 1; }
+    50% { opacity: 0.5; }
     100% { opacity: 0; }
 }
