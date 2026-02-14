@@ -27,7 +27,7 @@
     margin: 0 auto;
 }
 
-@mixin grid ($columnas: 1fr, $separacion: 5rem) { // el ": 5rem" esteablece el valor por default.
+@mixin grid ($columnas, $separacion: 5rem) { // el ": 5rem" esteablece el valor por default.
     display: grid;
     grid-template-columns: repeat($columnas, 1fr);
     gap: $separacion;
