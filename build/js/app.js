@@ -34,6 +34,7 @@ function mostrarImagen (i) {
 
     // Agregar al HTML
     const body = document.querySelector('body')
+    body.classList.add('overflow-hidden')//Crea la clase para no hacer scroll
     body.appendChild(modal)
 }
 
@@ -44,5 +45,8 @@ function cerrarModal () {
     //Retrasamos el cierre para que funcione la transición.
     setTimeout(() => {
         modal?.remove() // la lógica es: Si existe modal? Entonces elimínalo
+
+        const body = document.querySelector('body')
+        body.classList.remove('overflow-hidden') // Elimina la clase que evita el scroll
     }, 240); //cada 1000 es un segundo.
 }

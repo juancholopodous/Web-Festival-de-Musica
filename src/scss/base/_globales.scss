@@ -19,6 +19,10 @@ body {
     font-style: normal;
     color: v.$negro;
     font-size: 2rem;
+
+    &.overflow-hidden {
+        overflow: hidden; // Bloquea el scroll del mouse
+    }
 }
 
 p {
