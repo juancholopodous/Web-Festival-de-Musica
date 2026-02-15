@@ -20,6 +20,7 @@ function crarGalería () {
     }
 }
 
+
 function mostrarImagen (i) {
     const imagen = document.createElement('IMG')
         imagen.src = `src/img/gallery/full/${i}.jpg`
@@ -30,13 +31,22 @@ function mostrarImagen (i) {
     modal.classList.add('modal') //Generamos la clase para darle estilos con SASS
     modal.onclick = cerrarModal //Cierra el modal al hacer Click.
 
+    // Botón cerrar modal
+    const cerrarModalBtn = document.createElement('BOTTON')
+    cerrarModalBtn.textContent = 'X'
+    cerrarModalBtn.classList.add('btn-cerrar')
+    cerrarModalBtn.onclick = cerrarModal
+
     modal.appendChild(imagen) // Agrega imagen al HTML
+    modal.appendChild(cerrarModalBtn) // Agrega el botton al HTML
 
     // Agregar al HTML
     const body = document.querySelector('body')
     body.classList.add('overflow-hidden')//Crea la clase para no hacer scroll
     body.appendChild(modal)
 }
+
+
 
 function cerrarModal () {
     const modal = document.querySelector('.modal') //Seleccionamos la clase con el '.'

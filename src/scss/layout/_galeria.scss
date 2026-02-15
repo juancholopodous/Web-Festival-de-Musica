@@ -41,6 +41,19 @@
     }
 }
 
+.btn-cerrar {
+    width: 4rem; //Define el ancho.
+    height: 4rem; //Define el alto.
+    border-radius: 50%; //Crea un circulo.
+    background-color: v.$blanco; //Colorea el fondo de ese circulo.
+    border: none; // Elimina los bordes.
+    color: v.$negro; //Colorea la letra 'X'.
+    display: grid; // Permite aplicar la linea de debajo.
+    place-items: center; //Centra en todas las direcciones.
+    font-weight: 700; // La expresa con una línea más gruesa.
+    cursor: pointer; // Coloca un puntero en el elemento.
+}
+
 @keyframes fadeIn {
     0% { opacity: 0; }
     50% { opacity: 0.5; }
