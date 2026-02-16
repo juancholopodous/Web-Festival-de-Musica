@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     crarGalería()
+    navegacionFija()
 })
+
+function navegacionFija () {
+    const header = document.querySelector('.header')
+    header.classList.add('fixed')
+}
 
 function crarGalería () {
 
@@ -32,10 +38,10 @@ function mostrarImagen (i) {
     modal.onclick = cerrarModal //Cierra el modal al hacer Click.
 
     // Botón cerrar modal
-    const cerrarModalBtn = document.createElement('BOTTON')
-    cerrarModalBtn.textContent = 'X'
-    cerrarModalBtn.classList.add('btn-cerrar')
-    cerrarModalBtn.onclick = cerrarModal
+    const cerrarModalBtn = document.createElement('BOTTON') //Creamos el elemento botton en el HTML
+    cerrarModalBtn.textContent = 'X' // Le asignamos la lera mayúscula X
+    cerrarModalBtn.classList.add('btn-cerrar') // Le creamos y agregamos una clase
+    cerrarModalBtn.onclick = cerrarModal // Reutilizamos la función 'cerrarModal'
 
     modal.appendChild(imagen) // Agrega imagen al HTML
     modal.appendChild(cerrarModalBtn) // Agrega el botton al HTML
