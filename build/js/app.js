@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     crarGalería()
     navegacionFija()
     resaltarEnlace()
-
+    scrollNav()
 })
 
 function navegacionFija () {
@@ -85,6 +85,20 @@ function resaltarEnlace () {
             if (link.getAttribute('href') === '#' + actual) {
                 link.classList.add('active')
             }
+        })
+    })
+}
+
+function scrollNav() {
+    const navLinks = document.querySelectorAll('.navegacion-principal a') //Usamos SelectorAll porque queremos seleccionar todos los enlaces
+
+    navLinks.forEach( link => {
+        link.addEventListener('click', e => {
+            e.preventDefault()
+            const sectionScroll = e.target.getAttribute('href')
+            const section = document.querySelector(sectionScroll)
+
+            section.scrollIntoView({behavior: 'smooth'})  
         })
     })
 }
