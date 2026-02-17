@@ -16,12 +16,12 @@ function crarGalería () {
     const galeria = document.querySelector('.galeria-imagenes')
 
     for (let i = 1; i <= ultimaImagen ; i++) { //Nos permite crear la variable 'i' que coincide con el nombre de las img
-        const imagen = document.createElement('IMG')
-        imagen.loading = 'lazy'
-        imagen.width = '300' // estimación  de ancho para mejora de rendimiento
-        imagen.height = '200' // estimación de altura para mejora de rendimiento
-        imagen.src = `src/img/gallery/full/${i}.jpg` //Agrega el atributo de la ubicación de la imagen.
-        imagen.alt = 'Imagen Galería' //Generamos el texto alternativo.
+        const imagen = document.createElement('PICTURE')
+        imagen.innerHTML = `
+            <source srcset="build/img/gallery/thumb/${i}.avif" type="image/avif">
+            <source srcset="build/img/gallery/thumb/${i}.webp" type="image/webp">
+            <img loading="lazy" width="200" height="300" src="build/img/gallery/thumb/${i}.jpg" alt="imagen galeria">
+        `;
 
         // Event Handler
         imagen.onclick = function () {
@@ -32,9 +32,12 @@ function crarGalería () {
 }
 
 function mostrarImagen (i) {
-    const imagen = document.createElement('IMG')
-        imagen.src = `src/img/gallery/full/${i}.jpg`
-        imagen.alt = 'Imagen Galería'
+    const imagen = document.createElement('PICTURE')
+        imagen.innerHTML = `
+            <source srcset="build/img/gallery/full/${i}.avif" type="image/avif">
+            <source srcset="build/img/gallery/full/${i}.webp" type="image/webp">
+            <img loading="lazy" width="200" height="300" src="build/img/gallery/full/${i}.jpg" alt="imagen galeria">
+        `;
 
     // Generar Modal
     const modal = document.createElement('DIV') // lo usamos para oscurecer el fondo.
