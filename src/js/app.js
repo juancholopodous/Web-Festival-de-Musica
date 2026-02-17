@@ -17,6 +17,9 @@ function crarGalería () {
 
     for (let i = 1; i <= ultimaImagen ; i++) { //Nos permite crear la variable 'i' que coincide con el nombre de las img
         const imagen = document.createElement('IMG')
+        imagen.loading = 'lazy'
+        imagen.width = '300' // estimación  de ancho para mejora de rendimiento
+        imagen.height = '200' // estimación de altura para mejora de rendimiento
         imagen.src = `src/img/gallery/full/${i}.jpg` //Agrega el atributo de la ubicación de la imagen.
         imagen.alt = 'Imagen Galería' //Generamos el texto alternativo.
 
@@ -72,7 +75,7 @@ function resaltarEnlace () {
         const navLinks = document.querySelectorAll('.navegacion-principal a')
 
         let actual = ''; // Este string está vacio porque la primera vez el section está en un div y ese no pertenece a la navegación.
-        sections.forEach(section => {
+        sections.forEach(section => { // Recorre todos los section del documento.
             const sectionTop = section.offsetTop // .offsetTop mide la distancia hasta su elemento padre (la ventana global en este caso)
             const sectionHeight = section.clientHeight // .clientHeight mide el alto en si del elemento
             if (window.scrollY >= (sectionTop - sectionHeight / 3) ) { // Comprueba scroll vertical y determina cual section es mayor.

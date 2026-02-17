@@ -4,15 +4,20 @@ import gulpSass from 'gulp-sass'
 
 const sass = gulpSass(dartSass)
 
+import terser from 'gulp-terser' //Importamos gulp-terser.
+
 export function js (done) {//Estamos llevando js hacia la carpeta build
     src('src/js/app.js')
+        .pipe(terser())
         .pipe( dest('build/js'))
     done()
 }
 
 export function css(done) {
     src('src/scss/**/*.scss', {sourcemaps: true}) // ruta completa del arvhivo
-        .pipe( sass() .on('error', sass.logError) ) 
+        .pipe( sass({
+            style: 'compressed' // Comprime el código css compilado.
+        }) .on('error', sass.logError) ) 
         .pipe( dest('build/css', {sourcemaps: true}) )
         
     done()
