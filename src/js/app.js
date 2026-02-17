@@ -68,21 +68,21 @@ function cerrarModal () {
 
 function resaltarEnlace () {
     document.addEventListener('scroll', function() {
-        const sections = document.querySelectorAll('section') 
+        const sections = document.querySelectorAll('section') //No es una clase, estamos seleccionado la etiqueta HTML
         const navLinks = document.querySelectorAll('.navegacion-principal a')
 
-        let actual = '';
+        let actual = ''; // Este string está vacio porque la primera vez el section está en un div y ese no pertenece a la navegación.
         sections.forEach(section => {
-            const sectionTop = section.offsetTop
-            const sectionHeight = section.clientHeight
-            if (window.scrollY >= (sectionTop - sectionHeight / 3) ) {
+            const sectionTop = section.offsetTop // .offsetTop mide la distancia hasta su elemento padre (la ventana global en este caso)
+            const sectionHeight = section.clientHeight // .clientHeight mide el alto en si del elemento
+            if (window.scrollY >= (sectionTop - sectionHeight / 3) ) { // Comprueba scroll vertical y determina cual section es mayor.
                 actual = section.id
             }
         })
 
         navLinks.forEach(link => {
             link.classList.remove('active')
-            if (link.getAttribute('href') === '#' + actual) {
+            if (link.getAttribute('href') === '#' + actual) { //obtenemos el link que sea "#actual" y le agregamos la clase active 
                 link.classList.add('active')
             }
         })
