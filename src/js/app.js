@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     crarGalería()
     navegacionFija()
+    resaltarEnlace()
+
 })
 
 function navegacionFija () {
@@ -25,7 +27,6 @@ function crarGalería () {
         galeria.appendChild(imagen)
     }
 }
-
 
 function mostrarImagen (i) {
     const imagen = document.createElement('IMG')
@@ -52,8 +53,6 @@ function mostrarImagen (i) {
     body.appendChild(modal)
 }
 
-
-
 function cerrarModal () {
     const modal = document.querySelector('.modal') //Seleccionamos la clase con el '.'
     modal.classList.add('fade-out')
@@ -65,4 +64,27 @@ function cerrarModal () {
         const body = document.querySelector('body')
         body.classList.remove('overflow-hidden') // Elimina la clase que evita el scroll
     }, 240); //cada 1000 es un segundo.
+}
+
+function resaltarEnlace () {
+    document.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('section') 
+        const navLinks = document.querySelectorAll('.navegacion-principal a')
+
+        let actual = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop
+            const sectionHeight = section.clientHeight
+            if (window.scrollY >= (sectionTop - sectionHeight / 3) ) {
+                actual = section.id
+            }
+        })
+
+        navLinks.forEach(link => {
+            link.classList.remove('active')
+            if (link.getAttribute('href') === '#' + actual) {
+                link.classList.add('active')
+            }
+        })
+    })
 }
