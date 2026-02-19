@@ -20,7 +20,7 @@ function crarGalería () {
         imagen.innerHTML = `
             <source srcset="build/img/gallery/thumb/${i}.avif" type="image/avif">
             <source srcset="build/img/gallery/thumb/${i}.webp" type="image/webp">
-            <img loading="lazy" width="200" height="300" src="build/img/gallery/thumb/${i}.jpg" alt="imagen galeria">
+            <img loading="lazy" width="500" height="500" src="build/img/gallery/thumb/${i}.jpg" alt="imagen galeria">
         `;
 
         // Event Handler
@@ -36,7 +36,7 @@ function mostrarImagen (i) {
         imagen.innerHTML = `
             <source srcset="build/img/gallery/full/${i}.avif" type="image/avif">
             <source srcset="build/img/gallery/full/${i}.webp" type="image/webp">
-            <img loading="lazy" width="200" height="300" src="build/img/gallery/full/${i}.jpg" alt="imagen galeria">
+            <img loading="lazy" width="500" height="500" src="build/img/gallery/full/${i}.jpg" alt="imagen galeria">
         `;
 
     // Generar Modal
